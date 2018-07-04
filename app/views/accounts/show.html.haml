@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Group:
+  = @account.group
+%p
+  %b User:
+  = @account.user
+%p
+  %b Name:
+  = @account.name
+%p
+  %b Account type:
+  = @account.account_type
+%p
+  %b Reserve:
+  = @account.reserve
+
+= link_to 'Edit', edit_account_path(@account)
+\|
+= link_to 'Back', accounts_path

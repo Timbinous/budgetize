@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Account:
+  = @fund.account
+%p
+  %b Group:
+  = @fund.group
+%p
+  %b Goal amount:
+  = @fund.goal_amount
+%p
+  %b Goal date:
+  = @fund.goal_date
+%p
+  %b Recurring interval:
+  = @fund.recurring_interval
+
+= link_to 'Edit', edit_fund_path(@fund)
+\|
+= link_to 'Back', funds_path

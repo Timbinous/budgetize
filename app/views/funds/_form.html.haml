@@ -1,0 +1,25 @@
+= form_for @fund do |f|
+  - if @fund.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@fund.errors.count, "error")} prohibited this fund from being saved:"
+      %ul
+        - @fund.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :account
+    = f.text_field :account
+  .field
+    = f.label :group
+    = f.text_field :group
+  .field
+    = f.label :goal_amount
+    = f.text_field :goal_amount
+  .field
+    = f.label :goal_date
+    = f.date_select :goal_date
+  .field
+    = f.label :recurring_interval
+    = f.number_field :recurring_interval
+  .actions
+    = f.submit 'Save'
