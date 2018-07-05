@@ -1,11 +1,14 @@
 %p#notice= notice
 
 %p
-  %b Account:
-  = @fund.account
+  %b Name:
+  = @fund.name
 %p
-  %b Group:
-  = @fund.group
+  %b Account:
+  = @fund.account.name
+%p
+  %b Description:
+  = @fund.description
 %p
   %b Goal amount:
   = @fund.goal_amount

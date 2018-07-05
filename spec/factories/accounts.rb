@@ -3,7 +3,7 @@ FactoryBot.define do
     association :group
     trait :populated do
       name          { Faker::Bank.name }
-      account_type  [:checking, :money_market, :credit_card].sample
+      account_type  { Account.account_types.keys.sample }
       reserve       { Faker::Number.number(4) }
     end
   end

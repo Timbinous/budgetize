@@ -7,17 +7,20 @@
           %li= message
 
   .field
-    = f.label :account
-    = f.text_field :account
+    = f.label :name
+    = f.text_field :name
   .field
-    = f.label :group
-    = f.text_field :group
+    = f.label :account_id, "Account"
+    = f.select :account_id, f.object.group.accounts.map { |a| [ a.name, a.id ] }
+  .field
+    = f.label :description
+    = f.text_field :description
   .field
     = f.label :goal_amount
     = f.text_field :goal_amount
   .field
     = f.label :goal_date
-    = f.date_select :goal_date
+    = f.text_field :goal_date
   .field
     = f.label :recurring_interval
     = f.number_field :recurring_interval

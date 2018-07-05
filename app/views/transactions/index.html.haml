@@ -7,7 +7,8 @@
       %th Account
       %th Amount
       %th Description
-      %th Transaction date
+      %th Transaction Date
+      %th Transaction Type
       %th
       %th
       %th
@@ -15,11 +16,12 @@
   %tbody
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.fund
-        %td= transaction.account
+        %td= transaction.fund.name
+        %td= transaction.account.name
         %td= transaction.amount
         %td= transaction.description
         %td= transaction.transaction_date
+        %td= transaction.transaction_type
         %td= link_to 'Show', transaction
         %td= link_to 'Edit', edit_transaction_path(transaction)
         %td= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' }

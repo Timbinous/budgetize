@@ -3,8 +3,8 @@
 %table
   %thead
     %tr
+      %th Name
       %th Account
-      %th Group
       %th Goal amount
       %th Goal date
       %th Recurring interval
@@ -15,8 +15,8 @@
   %tbody
     - @funds.each do |fund|
       %tr
-        %td= fund.account
-        %td= fund.group
+        %td= fund.name
+        %td= fund.account.name
         %td= fund.goal_amount
         %td= fund.goal_date
         %td= fund.recurring_interval

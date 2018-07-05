@@ -2,10 +2,10 @@
 
 %p
   %b Fund:
-  = @transaction.fund
+  = @transaction.fund.name
 %p
   %b Account:
-  = @transaction.account
+  = @transaction.account.name
 %p
   %b Amount:
   = @transaction.amount
@@ -15,6 +15,9 @@
 %p
   %b Transaction date:
   = @transaction.transaction_date
+%p
+  %b Transaction type:
+  = @transaction.transaction_type
 
 = link_to 'Edit', edit_transaction_path(@transaction)
 \|

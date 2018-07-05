@@ -8,10 +8,10 @@
 
   .field
     = f.label :fund
-    = f.text_field :fund
+    = f.select :fund_id, f.object.group.funds.map {|fund| [fund.name, fund.id]}
   .field
     = f.label :account
-    = f.text_field :account
+    = f.select :account_id, f.object.group.accounts.map {|account| [account.name, account.id]}
   .field
     = f.label :amount
     = f.text_field :amount
@@ -20,6 +20,9 @@
     = f.text_field :description
   .field
     = f.label :transaction_date
-    = f.datetime_select :transaction_date
+    = f.text_field :transaction_date
+  .field
+    = f.label :transaction_type
+    = f.select :transaction_type, Transaction.transaction_types.keys
   .actions
     = f.submit 'Save'
