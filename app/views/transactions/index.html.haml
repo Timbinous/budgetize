@@ -16,8 +16,8 @@
   %tbody
     - @transactions.each do |transaction|
       %tr
-        %td= transaction.fund.name
-        %td= transaction.account.name
+        %td= transaction.fund&.name
+        %td= transaction.account&.name
         %td= transaction.amount
         %td= transaction.description
         %td= transaction.transaction_date
