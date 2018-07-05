@@ -3,8 +3,6 @@
 %table
   %thead
     %tr
-      %th Group
-      %th User
       %th Name
       %th Account type
       %th Reserve
@@ -15,8 +13,6 @@
   %tbody
     - @accounts.each do |account|
       %tr
-        %td= account.group
-        %td= account.user
         %td= account.name
         %td= account.account_type
         %td= account.reserve
